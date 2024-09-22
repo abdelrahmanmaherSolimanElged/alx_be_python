@@ -1,45 +1,26 @@
-def main():
-  """Prompts user for task details and provides a customized reminder."""
+# daily_reminder.py
 
-  # Get user input for the task
-  task = input("Enter your task: ")
+# Prompt user for task details
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-  # Get user input for priority
-  while True:
-    priority = input("Priority (high/medium/low): ").lower()
-    if priority in ("high", "medium", "low"):
-      break
-    else:
-      print("Invalid priority. Please enter high, medium, or low.")
-
-  # Get user input for time sensitivity
-  while True:
-    time_bound = input("Is it time-bound? (yes/no): ").lower()
-    if time_bound in ("yes", "no"):
-      break
-    else:
-      print("Invalid input. Please enter yes or no.")
-
-  # Process task based on priority and time sensitivity
-  reminder = f"'{task}' is a {priority} priority task. "
-
-  match priority:
+# Provide customized reminder based on priority and time sensitivity
+match priority:
     case "high":
-      reminder += "Don't forget to complete it!"
-      if time_bound == "yes":
-        reminder += " It requires immediate attention today!"
+        reminder = f"'{task}' is a high priority task"
     case "medium":
-      reminder += "Consider completing it when you have a chance."
+        reminder = f"'{task}' is a medium priority task"
     case "low":
-      reminder += "This can wait, but don't forget about it."
+        reminder = f"'{task}' is a low priority task"
+    case _:
+        reminder = "Invalid priority level provided."
 
-  # Additional message for non-time-bound high priority tasks
-  if not time_bound and priority == "high":
-    print(reminder)
-    print("\nWell done on completing this project! Let the world hear about this milestone achieved.")
-    print(" Click here to tweet! ")
-  else:
-    print(reminder)
+# Modify the reminder if the task is time-sensitive
+if time_bound == "yes":
+    reminder += " that requires immediate attention today!"
+else:
+    reminder += ". Consider completing it when you have free time."
 
-if __name__ == "__main__":
-  main()
+# Output the final reminder
+print(f"Reminder: {reminder}")
