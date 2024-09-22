@@ -1,0 +1,63 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E101" />
+          <option value="W191" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N802" />
+          <option value="N803" />
+          <option value="N813" />
+          <option value="N814" />
+        </list>
+      </option>
+      <option name="ignoredBaseClasses">
+        <list>
+          <option value="unittest.TestCase" />
+          <option value="unittest.case.TestCase" />
+          <option value="HashClass.Hash" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPropertyDefinitionInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Util.HashClassimport" />
+          <option value="Util.*" />
+          <option value="screeens_classes.unhash_class.active.clicked" />
+          <option value="str.setAlignment" />
+          <option value="PyQt5.QtPrintSupport.QPrinter.PrinterMode.HighResolution" />
+          <option value="PyQt5.QtWidgets.*" />
+          <option value="screen1.printer_name" />
+          <option value="utiles.hachclass.Hash.hash_password" />
+          <option value="utiles.hachclass.Hash.comparePassword" />
+          <option value="str.decrypt" />
+          <option value="model.employee.name" />
+          <option value="model.employee.userame" />
+          <option value="model.employee.password" />
+          <option value="property.setter" />
+          <option value="utiles.stack_widget.controler" />
+          <option value="controler.aftersale_invoice.invoice.text" />
+          <option value="str.strftime" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
