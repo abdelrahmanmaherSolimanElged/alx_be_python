@@ -26,7 +26,7 @@ def main():
         # Handle each menu option
         if choice == 1:
             # Add an item to the shopping list
-            item = input("Enter the name of the item to add: ").strip()
+            item = int(input("Enter the name of the item to add: ").strip())
             shopping_list.append(item)
             print(f"'{item}' has been added to your shopping list.")
 
