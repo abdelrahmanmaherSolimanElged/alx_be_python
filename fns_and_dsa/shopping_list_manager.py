@@ -1,5 +1,3 @@
-# shopping_list_manager.py
-
 def display_menu():
     """
     Display the shopping list menu options.
@@ -20,19 +18,23 @@ def main():
         # Display menu
         display_menu()
 
-        # Get the user's choice
-        choice = int(input("Enter your choice: ").strip())
+        # Get the user's choice and handle invalid input
+        try:
+            choice = int(input("Enter your choice: ").strip())
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 4.")
+            continue
 
         # Handle each menu option
         if choice == 1:
             # Add an item to the shopping list
-            item = int(input("Enter the name of the item to add: ").strip())
+            item = input("Enter the item to add: ").strip()  # Updated prompt format
             shopping_list.append(item)
             print(f"'{item}' has been added to your shopping list.")
 
         elif choice == 2:
             # Remove an item from the shopping list
-            item = int(input("Enter the name of the item to remove: ").strip())
+            item = input("Enter the item to remove: ").strip()
             if item in shopping_list:
                 shopping_list.remove(item)
                 print(f"'{item}' has been removed from your shopping list.")
@@ -55,7 +57,8 @@ def main():
 
         else:
             # Handle invalid menu choices
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Please enter a number between 1 and 4.")
 
 if __name__ == "__main__":
     main()
+
