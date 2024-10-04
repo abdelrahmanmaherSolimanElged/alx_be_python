@@ -32,7 +32,7 @@ def main():
 
         elif choice == 2:
             # Remove an item from the shopping list
-            item = input("Enter the name of the item to remove: ").strip()
+            item = int(input("Enter the name of the item to remove: ").strip())
             if item in shopping_list:
                 shopping_list.remove(item)
                 print(f"'{item}' has been removed from your shopping list.")
