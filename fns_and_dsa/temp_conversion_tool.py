@@ -1,7 +1,7 @@
 # Global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
-FREEZING_POINT_CELSIUS = 32
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9   # Conversion factor for Fahrenheit to Celsius
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5   # Conversion factor for Celsius to Fahrenheit
+FREEZING_POINT_CELSIUS = 32            # Freezing point of water in Fahrenheit
 
 # Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
@@ -25,10 +25,10 @@ def main():
         # Perform the appropriate conversion based on user input
         if unit == 'C':
             converted_temp = convert_to_fahrenheit(temp)
-            print(f"{temp}°C is {converted_temp:.2f}°F")
+            print(f"{temp:.2f}°C is {converted_temp:.2f}°F")
         elif unit == 'F':
             converted_temp = convert_to_celsius(temp)
-            print(f"{temp}°F is {converted_temp:.2f}°C")
+            print(f"{temp:.2f}°F is {converted_temp:.2f}°C")
         else:
             raise ValueError("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
     
