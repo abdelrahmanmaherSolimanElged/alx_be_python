@@ -21,16 +21,16 @@ def main():
         display_menu()
 
         # Get the user's choice
-        choice = input("Enter your choice: ").strip()
+        choice = int(input("Enter your choice: ").strip())
 
         # Handle each menu option
-        if choice == '1':
+        if choice == 1:
             # Add an item to the shopping list
             item = input("Enter the name of the item to add: ").strip()
             shopping_list.append(item)
             print(f"'{item}' has been added to your shopping list.")
 
-        elif choice == '2':
+        elif choice == 2:
             # Remove an item from the shopping list
             item = input("Enter the name of the item to remove: ").strip()
             if item in shopping_list:
@@ -39,7 +39,7 @@ def main():
             else:
                 print(f"'{item}' is not in your shopping list.")
 
-        elif choice == '3':
+        elif choice == 3:
             # Display the current shopping list
             if shopping_list:
                 print("\nCurrent Shopping List:")
@@ -48,7 +48,7 @@ def main():
             else:
                 print("\nYour shopping list is empty.")
 
-        elif choice == '4':
+        elif choice == 4:
             # Exit the program
             print("Goodbye!")
             break
