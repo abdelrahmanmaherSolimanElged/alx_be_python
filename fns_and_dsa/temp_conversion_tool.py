@@ -5,13 +5,13 @@ FREEZING_POINT_CELSIUS = 32
 
 # Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
-    # Accessing global variables (no need to declare them with 'global' unless you're modifying them)
+    # Convert Fahrenheit to Celsius using the global conversion factor
     celsius = (fahrenheit - FREEZING_POINT_CELSIUS) * FAHRENHEIT_TO_CELSIUS_FACTOR
     return celsius
 
 # Function to convert Celsius to Fahrenheit
 def convert_to_fahrenheit(celsius):
-    # Accessing global variables
+    # Convert Celsius to Fahrenheit using the global conversion factor
     fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FREEZING_POINT_CELSIUS
     return fahrenheit
 
@@ -25,10 +25,10 @@ def main():
         # Perform the appropriate conversion based on user input
         if unit == 'C':
             converted_temp = convert_to_fahrenheit(temp)
-            print(f"{temp}°C is {converted_temp}°F")
+            print(f"{temp}°C is {converted_temp:.2f}°F")
         elif unit == 'F':
             converted_temp = convert_to_celsius(temp)
-            print(f"{temp}°F is {converted_temp}°C")
+            print(f"{temp}°F is {converted_temp:.2f}°C")
         else:
             raise ValueError("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
     
