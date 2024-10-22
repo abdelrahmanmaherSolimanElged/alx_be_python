@@ -1,35 +1,35 @@
-# Global Conversion Factors
+# Global conversion factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
-FAHRENHEIT_OFFSET = 32  # Offset for Fahrenheit to Celsius conversion
 
+# Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
-    """Convert Fahrenheit to Celsius using the global conversion factor."""
-    # Using the global variable for the conversion factor
-    celsius = (fahrenheit - FAHRENHEIT_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR
+    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
     return celsius
 
+# Function to convert Celsius to Fahrenheit
 def convert_to_fahrenheit(celsius):
-    """Convert Celsius to Fahrenheit using the global conversion factor."""
-    # Using the global variable for the conversion factor
-    fahrenheit = (celsius *  CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_OFFSET
+    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
     return fahrenheit
 
+# Main function to handle user input and perform the conversion
 def main():
-   
-    # User input for temperature and unit
-    temp = float(input("Enter the temperature to convert: "))
+    try:
+        temperature = float(input("Enter the temperature to convert: "))
+    except ValueError:
+        raise ValueError("Invalid temperature. Please enter a numeric value.")
+    
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+    
+    if unit == 'C':
+        converted = convert_to_fahrenheit(temperature)
+        print(f"{temperature}°C is {converted}°F")
+    elif unit == 'F':
+        converted = convert_to_celsius(temperature)
+        print(f"{temperature}°F is {converted}°C")
+    else:
+        print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
 
-    if unit == 'F':
-        # Convert to Celsius
-        celsius_temp = convert_to_celsius(temp)
-        print(f"{temp}°F is {celsius_temp}°C")
-    elif unit == 'C':
-        # Convert to Fahrenheit
-        fahrenheit_temp = convert_to_fahrenheit(temp)
-        print(f"{temp}°C is {fahrenheit_temp}°F")
-        
-
+# Run the program
 if __name__ == "__main__":
     main()
